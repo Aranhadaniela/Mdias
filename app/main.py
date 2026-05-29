@@ -9,10 +9,17 @@ app = FastAPI(
     version="1.0.0"
 )
 
+origins = [
+    "https://m-dias-branco-responsabilidade-social.powerappsportals.com",
+    "http://localhost:3000",
+    "http://localhost:8000",
+    "http://127.0.0.1:8000"
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
+    allow_origins=origins,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
