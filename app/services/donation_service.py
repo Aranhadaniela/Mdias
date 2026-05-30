@@ -21,13 +21,10 @@ def create_donation_form(data: DonationFormRequest):
         "status": donation_data["status"],
     }
 
-
-
 def list_donation_forms():
     return donation_forms
 
-
-def get_donation_form_by_id(donation_id: int):
+def get_donation_form_by_id(donation_id: str):
     for donation in donation_forms:
         if donation["id"] == donation_id:
             return donation

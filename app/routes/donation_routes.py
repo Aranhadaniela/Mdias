@@ -35,7 +35,7 @@ def get_donation_forms():
 
 
 @router.get("/formulario-doacao/{donation_id}")
-def get_donation_form(donation_id: int):
+def get_donation_form(donation_id: str):
     result = get_donation_form_by_id(donation_id)
 
     if not result:
