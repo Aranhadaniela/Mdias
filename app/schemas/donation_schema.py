@@ -8,7 +8,7 @@ class DonationFormRequest(BaseModel):
     representante_instituicao: str
     email: EmailStr
     telefone: str
-
+    programa_id: int 
     pessoas_beneficiadas: int
 
     tipo_doacao: str
@@ -17,3 +17,8 @@ class DonationFormRequest(BaseModel):
 
     uf: str
     observacoes: Optional[str] = None
+    
+class DonationFomResponse(BaseModel):
+    id:str
+    status:str
+    

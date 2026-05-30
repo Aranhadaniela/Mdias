@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
+from app.routes.program_routes import router as program_router
 from app.routes.donation_routes import router as donation_router
 
 app = FastAPI(
@@ -25,7 +25,7 @@ app.add_middleware(
 )
 
 app.include_router(donation_router, prefix="/api")
-
+app.include_router(program_router, prefix="/api")
 
 @app.get("/")
 def home():
